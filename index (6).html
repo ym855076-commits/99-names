@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#07061a">
+<title>99 имён Аллаха</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Unbounded:wght@500;800&display=swap">
+<style>
+:root{--bg:#07061a;--ink:#f3f1ff;--dim:#9a97c4;--gold:#ffcf5c;--gold2:#ffe9a8;--teal:#22d3c5;--glass:rgba(255,255,255,.07);--line:rgba(255,255,255,.14);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);background:var(--bg)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;min-height:100dvh;color:var(--ink);font-family:"Segoe UI",Roboto,system-ui,sans-serif;background:radial-gradient(80% 50% at 85% 0%,#7a5cff55,transparent 70%),radial-gradient(70% 45% at 0% 45%,#22d3c52e,transparent 70%),radial-gradient(90% 50% at 70% 100%,#ffcf5c22,transparent 70%),var(--bg);background-attachment:fixed}
+main{max-width:460px;margin:0 auto;padding:10px 16px 104px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+h1{font:800 1.25rem Unbounded,sans-serif;margin:0}
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:28px;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+.chip{padding:8px 14px;border-radius:99px;font:500 .74rem Unbounded,sans-serif;border:1px solid var(--line);background:var(--glass);color:var(--gold2)}
+.tab{display:none}.tab.on{display:block}
+.pg{padding:10px 14px;border-radius:20px}
+.pl{display:flex;justify-content:space-between;font:500 .78rem Unbounded,sans-serif;color:var(--dim);margin-bottom:6px}
+.pl b{color:var(--gold2);font-weight:500}
+.track{height:10px;border-radius:9px;background:#ffffff14;overflow:hidden}
+#fill{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--teal),var(--gold));transition:width .5s}
+.day{display:block;margin:8px auto 0;cursor:pointer;color:var(--ink)}
+canvas{display:block;margin:4px auto 0;touch-action:none;cursor:grab}
+.info{padding:12px 16px;text-align:center}
+.ar{font:700 clamp(2.6rem,13vw,3.5rem)/1.35 Amiri,"Noto Naskh Arabic",serif;color:var(--gold);text-shadow:0 0 24px #ffcf5c66}
+.nm{font:800 2rem/1.15 Unbounded,sans-serif;margin:0}
+.mn{font:500 1.1rem/1.3 Unbounded,sans-serif;color:var(--gold2);margin:8px 0 0}
+.row{display:flex;gap:8px;margin-top:12px}
+button{min-height:52px;border-radius:16px;border:1px solid var(--line);background:#ffffff10;color:var(--ink);font:500 .88rem Unbounded,sans-serif;cursor:pointer}
+button:active{background:#ffffff26}
+button:focus-visible,.ring:focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
+.ic{flex:0 0 56px;font-size:1.6rem}
+#lrn{flex:1;font-size:.74rem;padding:0 6px}
+#lrn.on{background:linear-gradient(135deg,var(--gold),#ff9f5c);color:#1a1200;border-color:transparent}
+.tb{padding:20px 16px;text-align:center}
+.seg{display:flex;gap:8px;justify-content:center;margin-top:14px}
+.seg button{flex:0 0 72px;min-height:44px}
+.seg button.on{border-color:var(--gold);color:var(--gold2);background:#ffcf5c1f}
+.ring{position:relative;width:min(74vw,290px);aspect-ratio:1;margin:18px auto 8px;display:grid;place-items:center;border-radius:50%;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation;transition:transform .08s}
+.ring:active{transform:scale(.97)}
+.ring svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.trk{fill:none;stroke:#ffffff17;stroke-width:12}
+#arc{fill:none;stroke:url(#g);stroke-width:12;stroke-linecap:round;stroke-dasharray:653.45;stroke-dashoffset:653.45;transition:stroke-dashoffset .25s}
+#cn{font:800 4rem Unbounded,sans-serif;color:var(--gold2)}
+.sm{color:var(--dim);font-size:.9rem;margin:2px 0 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));pointer-events:none}
+.bar div{pointer-events:auto;display:flex;gap:6px;padding:6px;width:min(460px,100%);border-radius:24px;background:rgba(14,12,46,.82);border:1px solid var(--line);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+.bar button{flex:1;border:0;background:none;color:var(--dim)}
+.bar button.on{background:#ffffff1f;color:var(--gold2)}
+</style>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+</head>
+<body>
+<main>
+<header><h1>99 имён</h1><span class="chip" id="stk">Серия: 0 дн.</span></header>
+<section id="t1" class="tab on">
+<div class="glass pg"><div class="pl"><span>Выучено</span><b id="pc">0 из 99</b></div><div class="track"><i id="fill"></i></div></div>
+<button class="chip day" id="dayb"></button>
+<canvas id="w" aria-label="Колесо имён: проведи по кругу"></canvas>
+<div class="glass info" aria-live="polite">
+<div class="ar" id="ar" lang="ar" dir="rtl"></div>
+<h2 class="nm" id="nm"></h2>
+<p class="mn" id="mn"></p>
+<div class="row"><button class="ic" id="pv" aria-label="Предыдущее имя">‹</button><button class="ic" id="sp" aria-label="Озвучить имя">▶</button><button id="lrn">Выучил</button><button class="ic" id="nx" aria-label="Следующее имя">›</button></div>
+</div>
+</section>
+<section id="t2" class="tab">
+<div class="glass tb">
+<div class="ar" id="tar" lang="ar" dir="rtl"></div>
+<h2 class="nm" id="tnm"></h2>
+<div class="seg" id="tg"><button data-v="33">33</button><button data-v="99">99</button><button data-v="0">∞</button></div>
+<div class="ring" id="ring" role="button" tabindex="0" aria-label="Нажми, чтобы посчитать повторение">
+<svg viewBox="0 0 240 240"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3c5"/><stop offset="1" stop-color="#ffcf5c"/></linearGradient></defs><circle class="trk" cx="120" cy="120" r="104"/><circle id="arc" cx="120" cy="120" r="104"/></svg>
+<div id="cn">0</div>
+</div>
+<p class="sm" id="rd"></p>
+<div class="row"><button class="ic" id="pv2" aria-label="Предыдущее имя">‹</button><button id="rs">Сбросить счёт имени</button><button class="ic" id="nx2" aria-label="Следующее имя">›</button></div>
+</div>
+</section>
+</main>
+<footer class="bar"><div><button class="on" data-t="t1">Имена</button><button data-t="t2">Тасбих</button></div></footer>
+<script>
+const D=`Ар-Рахман|الرحمن|Милостивый
+Ар-Рахим|الرحيم|Милосердный
+Аль-Малик|الملك|Владыка
+Аль-Куддус|القدوس|Пречистый
+Ас-Салям|السلام|Источник мира
+Аль-Му’мин|المؤمن|Дарующий безопасность
+Аль-Мухаймин|المهيمن|Хранитель
+Аль-Азиз|العزيز|Могущественный
+Аль-Джаббар|الجبار|Всесильный
+Аль-Мутакаббир|المتكبر|Превосходящий
+Аль-Халик|الخالق|Творец
+Аль-Бари|البارئ|Создатель
+Аль-Мусаввир|المصور|Дающий облик
+Аль-Гаффар|الغفار|Прощающий
+Аль-Каххар|القهار|Покоряющий
+Аль-Ваххаб|الوهاب|Дарующий
+Ар-Раззак|الرزاق|Дарующий удел
+Аль-Фаттах|الفتاح|Открывающий
+Аль-Алим|العليم|Всезнающий
+Аль-Кабид|القابض|Сжимающий
+Аль-Басит|الباسط|Расширяющий
+Аль-Хафид|الخافض|Принижающий
+Ар-Рафи’|الرافع|Возвышающий
+Аль-Муиз|المعز|Дарующий могущество
+Аль-Музилль|المذل|Лишающий могущества
+Ас-Сами’|السميع|Всеслышащий
+Аль-Басир|البصير|Всевидящий
+Аль-Хакам|الحكم|Судия
+Аль-Адль|العدل|Справедливый
+Аль-Латиф|اللطيف|Тонко знающий
+Аль-Хабир|الخبير|Осведомлённый
+Аль-Халим|الحليم|Кроткий
+Аль-Азым|العظيم|Великий
+Аль-Гафур|الغفور|Всепрощающий
+Аш-Шакур|الشكور|Благодарный
+Аль-Алий|العلي|Всевышний
+Аль-Кабир|الكبير|Величайший
+Аль-Хафиз|الحفيظ|Хранящий
+Аль-Мукит|المقيت|Питающий
+Аль-Хасиб|الحسيب|Воздающий по счёту
+Аль-Джалиль|الجليل|Величественный
+Аль-Карим|الكريم|Щедрый
+Ар-Ракиб|الرقيب|Наблюдающий
+Аль-Муджиб|المجيب|Отвечающий
+Аль-Васи’|الواسع|Всеобъемлющий
+Аль-Хаким|الحكيم|Мудрый
+Аль-Вадуд|الودود|Любящий
+Аль-Маджид|المجيد|Славный
+Аль-Баис|الباعث|Воскрешающий
+Аш-Шахид|الشهيد|Свидетель
+Аль-Хакк|الحق|Истина
+Аль-Вакиль|الوكيل|Покровитель
+Аль-Кавий|القوي|Сильный
+Аль-Матин|المتين|Твёрдый
+Аль-Валий|الولي|Заступник
+Аль-Хамид|الحميد|Достохвальный
+Аль-Мухсы|المحصي|Исчисляющий
+Аль-Мубди|المبدئ|Начинающий творение
+Аль-Муид|المعيد|Возвращающий
+Аль-Мухйи|المحيي|Дающий жизнь
+Аль-Мумит|المميت|Умерщвляющий
+Аль-Хайй|الحي|Живой
+Аль-Кайюм|القيوم|Вечносущий
+Аль-Ваджид|الواجد|Обретающий
+Аль-Маджид|الماجد|Благородный
+Аль-Вахид|الواحد|Единый
+Аль-Ахад|الأحد|Единственный
+Ас-Самад|الصمد|Самодостаточный
+Аль-Кадир|القادر|Могущий
+Аль-Муктадир|المقتدر|Всемогущий
+Аль-Мукаддим|المقدم|Выдвигающий
+Аль-Муаххир|المؤخر|Отдаляющий
+Аль-Авваль|الأول|Первый
+Аль-Ахир|الآخر|Последний
+Аз-Захир|الظاهر|Явный
+Аль-Батин|الباطن|Скрытый
+Аль-Вали|الوالي|Правитель
+Аль-Мутаали|المتعالي|Превознесённый
+Аль-Барр|البر|Благодетельный
+Ат-Тавваб|التواب|Принимающий покаяние
+Аль-Мунтаким|المنتقم|Карающий
+Аль-Афувв|العفو|Снисходительный
+Ар-Рауф|الرؤوف|Сострадательный
+Малик-уль-Мульк|مالك الملك|Владыка владычества
+Зуль-Джалали валь-Икрам|ذو الجلال والإكرام|Обладатель величия и щедрости
+Аль-Муксит|المقسط|Беспристрастный
+Аль-Джами’|الجامع|Собирающий
+Аль-Гани|الغني|Богатый
+Аль-Мугни|المغني|Обогащающий
+Аль-Мани’|المانع|Удерживающий
+Ад-Дарр|الضار|Посылающий вред
+Ан-Нафи’|النافع|Посылающий пользу
+Ан-Нур|النور|Свет
+Аль-Хади|الهادي|Ведущий верным путём
+Аль-Бади’|البديع|Несравненный Творец
+Аль-Бакы|الباقي|Вечный
+Аль-Варис|الوارث|Наследующий
+Ар-Рашид|الرشيد|Наставляющий
+Ас-Сабур|الصبور|Терпеливый`.split('\n').map(l=>l.split('|'));
+const N=D.length,$=id=>document.getElementById(id),cv=$('w'),cx=cv.getContext('2d'),st=2*Math.PI/N,C=653.45;
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches,ds=d=>d.toLocaleDateString('sv');
+const vib=p=>{try{navigator.vibrate&&navigator.vibrate(p)}catch(e){}};
+let S=360,dpr=1,run=false,li=-1,drag=null,K={l:[],i:0,cnt:{},day:'',act:[],tg:33};
+try{Object.assign(K,JSON.parse(localStorage.getItem('n99v2')||'{}'))}catch(e){}
+const lr=new Set(K.l);let pos=K.i>=0&&K.i<N?K.i:0,target=pos;
+const cur=()=>((Math.round(target)%N)+N)%N;
+function save(){K.l=[...lr];K.i=cur();try{localStorage.setItem('n99v2',JSON.stringify(K))}catch(e){}}
+function roll(){const t=ds(new Date());if(K.day!==t){K.day=t;K.cnt={}}}
+function streak(){const a=new Set(K.act);const d=new Date();let n=0;if(!a.has(ds(d)))d.setDate(d.getDate()-1);while(a.has(ds(d))){n++;d.setDate(d.getDate()-1)}return n}
+function stk(){$('stk').textContent='Серия: '+streak()+' дн.'}
+function mark(){roll();if(!K.act.includes(K.day))K.act.push(K.day);stk()}
+function prog(){const n=lr.size;$('pc').textContent=n+' из '+N;$('fill').style.width=(n/N*100)+'%'}
+function lbtn(){const o=lr.has(cur());$('lrn').classList.toggle('on',o);$('lrn').textContent=o?'Выучено ✓':'Выучил'}
+function tdraw(){roll();const c=K.cnt[cur()]||0,g=K.tg;$('cn').textContent=c;$('arc').style.strokeDashoffset=C*(1-(g?(c%g)/g:(c%100)/100));$('rd').textContent='Сегодня'+(g?' · кругов: '+Math.floor(c/g):'');[...$('tg').children].forEach(b=>b.classList.toggle('on',+b.dataset.v===g))}
+function ui(){const i=cur();if(i===li)return;li=i;const[n,a,m]=D[i];['ar','tar'].forEach(k=>$(k).textContent=a);['nm','tnm'].forEach(k=>{$(k).textContent=n;$(k).style.fontSize=Math.min(32,300/(n.length*.8))+'px'});$('mn').textContent=m;lbtn();tdraw();vib(8)}
+function size(){S=Math.min(innerWidth-32,440,Math.max(250,innerHeight*.4));dpr=devicePixelRatio||1;cv.width=cv.height=S*dpr;cv.style.width=cv.style.height=S+'px';draw()}
+function star(c,R,r){cx.beginPath();for(let k=0;k<16;k++){const a=k*Math.PI/8-Math.PI/2,q=k%2?r:R;cx[k?'lineTo':'moveTo'](c+Math.cos(a)*q,c+Math.sin(a)*q)}cx.closePath()}
+function draw(){
+cx.setTransform(dpr,0,0,dpr,0,0);cx.clearRect(0,0,S,S);
+const c=S/2,r1=S*.25,fs=S*.022;cx.textBaseline='middle';
+for(let i=0;i<N;i++){
+let d=((i-pos)%N+N)%N;if(d>N/2)d-=N;
+const on=Math.abs(d)<.5,v=lr.has(i);
+cx.save();cx.translate(c,c);cx.rotate(d*st);
+cx.beginPath();cx.arc(r1,0,on?S*.012:S*.0065,0,7);
+cx.fillStyle=v?'#ffcf5c':'#ffffff30';
+if(on){cx.shadowColor='#ffcf5c';cx.shadowBlur=14;cx.fillStyle='#fff3c9'}
+cx.fill();cx.shadowBlur=0;
+cx.font=(on?'700 ':'500 ')+(on?fs*1.1:fs)+'px "Segoe UI",Roboto,sans-serif';
+cx.fillStyle=on?'#fff':v?'#ffe9a8':'#9a97c4';
+cx.globalAlpha=on?1:Math.max(.3,1-Math.abs(d)/16);
+cx.fillText(D[i][0].split(' ')[0],r1+S*.03,0);cx.restore()}
+cx.strokeStyle='#ffcf5c';cx.lineWidth=1.5;cx.beginPath();cx.moveTo(c+S*.085,c);cx.lineTo(c+r1,c);cx.stroke();
+cx.shadowColor='#ffcf5c';cx.shadowBlur=16;star(c,S*.088,S*.072);cx.fillStyle='#120f40';cx.fill();cx.lineWidth=2.5;cx.stroke();cx.shadowBlur=0;
+cx.textAlign='center';cx.fillStyle='#ffe9a8';cx.font='800 '+S*.058+'px Unbounded,sans-serif';cx.fillText(cur()+1,c,c+1);cx.textAlign='start'}
+function tick(){
+if(!drag){const d=target-pos;if(Math.abs(d)<.003||RM){pos=target;save()}else pos+=d*.2}
+draw();if(drag||pos!==target)requestAnimationFrame(tick);else run=false}
+function kick(){if(!run){run=true;requestAnimationFrame(tick)}}
+function go(t){target=t;ui();kick();save()}
+const ang=e=>{const r=cv.getBoundingClientRect();return Math.atan2(e.clientY-r.top-r.height/2,e.clientX-r.left-r.width/2)};
+cv.addEventListener('pointerdown',e=>{cv.setPointerCapture(e.pointerId);drag={a:ang(e)};kick()});
+cv.addEventListener('pointermove',e=>{if(!drag)return;const a=ang(e);let d=a-drag.a;d=Math.atan2(Math.sin(d),Math.cos(d));drag.a=a;pos-=d/st;target=pos;ui()});
+const up=()=>{if(!drag)return;drag=null;go(Math.round(pos))};
+cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',up);
+const nx=()=>go(Math.round(target)+1),pv=()=>go(Math.round(target)-1);
+$('nx').onclick=$('nx2').onclick=nx;$('pv').onclick=$('pv2').onclick=pv;
+addEventListener('keydown',e=>{if(e.key==='ArrowRight')nx();if(e.key==='ArrowLeft')pv()});
+$('lrn').onclick=()=>{const i=cur();if(lr.has(i))lr.delete(i);else{lr.add(i);mark()}prog();lbtn();save();vib(14);draw()};
+function tap(){roll();const i=cur(),c=(K.cnt[i]||0)+1;K.cnt[i]=c;mark();save();tdraw();vib(K.tg&&c%K.tg===0?[30,50,30]:6)}
+$('ring').addEventListener('pointerdown',tap);
+$('ring').addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();tap()}});
+function speak(){if(!window.speechSynthesis){alert('Озвучка не поддерживается в этом браузере');return}const i=cur(),ar=speechSynthesis.getVoices().find(v=>v.lang.toLowerCase().startsWith('ar'));speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(ar?D[i][1]:D[i][0].split(' ')[0]);u.lang=ar?ar.lang:'ru-RU';if(ar)u.voice=ar;u.rate=.8;speechSynthesis.speak(u)}
+if(window.speechSynthesis)speechSynthesis.getVoices();
+$('sp').onclick=speak;
+$('rs').onclick=()=>{K.cnt[cur()]=0;save();tdraw()};
+$('tg').onclick=e=>{const b=e.target.closest('button');if(!b)return;K.tg=+b.dataset.v;save();tdraw()};
+document.querySelectorAll('.bar button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(s=>s.classList.toggle('on',s.id===b.dataset.t));document.querySelectorAll('.bar button').forEach(x=>x.classList.toggle('on',x===b));scrollTo(0,0);if(b.dataset.t==='t1')size()});
+const di=Math.floor((Date.now()-new Date(new Date().getFullYear(),0,0))/864e5)%N;
+$('dayb').textContent='Имя дня: '+D[di][0].split(' ')[0];
+$('dayb').onclick=()=>{let d=(di-cur()+N)%N;if(d>N/2)d-=N;go(Math.round(target)+d)};
+if(document.fonts)document.fonts.ready.then(draw);
+roll();ui();prog();stk();size();
+</script>
+<script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))</script>
+</body>
+</html>
